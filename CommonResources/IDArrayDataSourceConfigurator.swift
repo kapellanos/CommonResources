@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IDArrayDataSourceConfigurator<T,U>
+public class IDArrayDataSourceConfigurator<T,U>
 {
     var cellIdentifier: String
     var cellStyle: UITableViewCellStyle
@@ -16,7 +16,7 @@ class IDArrayDataSourceConfigurator<T,U>
     
     private var items: [[T]]
     
-    init(builder: IDArrayDataSourceConfigureBuilder<T,U>)
+    public init(builder: IDArrayDataSourceConfigureBuilder<T,U>)
     {
         cellIdentifier = builder.cellIdentifier ?? ""
         cellStyle = builder.cellStyle ?? .Default
@@ -52,7 +52,7 @@ class IDArrayDataSourceConfigurator<T,U>
 
 extension IDArrayDataSourceConfigurator: CustomStringConvertible
 {
-    var description: String {
+    public var description: String {
         return "cellIdentifier: \(cellIdentifier) cellStyle: \(cellStyle)"
     }
 }

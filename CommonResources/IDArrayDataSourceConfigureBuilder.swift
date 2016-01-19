@@ -8,14 +8,14 @@
 
 import UIKit
 
-class IDArrayDataSourceConfigureBuilder<T,U>
+public class IDArrayDataSourceConfigureBuilder<T,U>
 {
     var items:[[T]]?
     var cellIdentifier: String?
     var cellStyle: UITableViewCellStyle = .Default
     var configureCellClosure: ((cell: U, object: T) -> ())?
     
-    init(configureClosure: (configureBuilder: IDArrayDataSourceConfigureBuilder<T,U>) -> ())
+    public init(configureClosure: (configureBuilder: IDArrayDataSourceConfigureBuilder<T,U>) -> ())
     {
         configureClosure(configureBuilder: self)
     }
@@ -23,7 +23,7 @@ class IDArrayDataSourceConfigureBuilder<T,U>
 
 extension IDArrayDataSourceConfigureBuilder: CustomStringConvertible
 {
-    var description: String {
+    public var description: String {
         return "items:\(items)\ncellIdentifier: \(cellIdentifier)\ncellStyle: \(cellStyle)\ncellClosure:\(configureCellClosure)"
     }
 }
